@@ -25,7 +25,7 @@ Open SQLite3 inside the command-line. Then type `.save mydatabase.db` to save th
 * Enter:
     * Datasource Classname (below the drop-down menu): `org.sqlite.SQLiteConnectionPoolDataSource`
     * Click `Finish`
-* Click on the newly created SQLite connection pool and navigate to `Additional Properties` (above the page).
+* Click on the newly created SQLite connection pool and navigate to the `Additional Properties` tab (above the page).
 * Click `Add Property` and enter:
     * Name: `url`
     * Value: `jdbc:sqlite:[path to your database file]/mydatabase.db`
@@ -37,6 +37,13 @@ Open SQLite3 inside the command-line. Then type `.save mydatabase.db` to save th
     * Pool Name: `SQLite`
     * Click `OK`
 * Now you are done and can proceed to use the database in a project.
+* These steps are also shown with pictures on: [How To Setup a SQLite Connection Pool on Glassfish](https://sourceforge.net/p/sqlite-connpool/wiki/How%20To%20Setup%20a%20SQLite%20Connection%20Pool%20on%20Glassfish/)
 
 ## Create a project using the SQLite database
+* Create a new Dynamic Web Project in Eclipse.
+* Right click the project, navigate to `Configure`, click `Convert to JPA Project...` and click `Next` and `Finish`.
+* Right click the project again and navigate to `Properties > JPA` and enter in the drop-down menu below `Canonical Metamodel` the `src` folder.
+* Now open the project and the `JPA Content` subfolder and open the `persistence.xml`.
+* Open the `Source` tab and enter the contents of this [persistence.xml](persistence.xml).
+* It should now be possible to inject an EntityManager using annotations and access the database.
 
